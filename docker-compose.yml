@@ -1,0 +1,10 @@
+version: '3'
+services:
+  airflow:
+    image: apache/airflow:2.7.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./images:/opt/airflow/images
+    command: standalone
